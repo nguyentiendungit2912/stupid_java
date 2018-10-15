@@ -10,29 +10,29 @@ public class x {
 		int CC=hohoho(arg);System.exit(CC);    
 	}
 	
-    public static int hohoho(String uuu[]) {
-        try{if(uuu.length != 2) return -1;
-		String bbb,ddd = new String(Files.readAllBytes(Paths.get(uuu[1]))); 
-            bbb = new String(Files.readAllBytes(Paths.get(uuu[0])));
-            int kkk = bbb.length();
-            if(kkk<4)  return -2;
-			int RRR=0; 
-			float eee=0;
-            for(int aaa=0;aaa<kkk-3;aaa++){       
-				for(int qqq=0;qqq<ddd.length()-4;qqq+=1){
+    public static int hohoho(String args[]) {
+        try{if(args.length != 2) return -1;
+		String value1,value2 = new String(Files.readAllBytes(Paths.get(args[1]))); 
+            value1 = new String(Files.readAllBytes(Paths.get(args[0])));
+            int length = value1.length();
+            if(length<4)  return -2;
+			int count=0; 
+			float ab=0;
+            for(int i=0;i<length-3;i++){       
+				for(int j=0;j<value2.length()-4;j+=1){
 					int vOv = 0;
 						for(int CC=0;CC<4;CC++){
-							if(bbb.charAt(aaa+CC) == ddd.charAt(qqq+CC))              
+							if(value1.charAt(i+CC) == value2.charAt(j+CC))              
 								vOv ++;
 					}      	
 					if (vOv == 4){
-						System.out.println("DEBUG:".concat(String.valueOf(aaa) + "," + String.valueOf(qqq)));
-						RRR++; eee+=1;
+						System.out.println("DEBUG:".concat(String.valueOf(i) + "," + String.valueOf(j)));
+						count++; ab+=1;
 					}else 
-						++RRR;       
+						++count;       
 					}
 				}
-						System.out.println(String.valueOf(Math.round(eee)).concat("/")+ String.valueOf(RRR));   
+						System.out.println(String.valueOf(Math.round(ab)).concat("/")+ String.valueOf(count));   
 						return 1;
 		} catch(IOException ex){
 			System.out.println("DEBUG:Error");
